@@ -1,0 +1,7 @@
+"Plots" are digital properties restricted by certain parameters: they are only one page in size, no scrolling, and you can only add a certain amount of images and text to it.
+
+Users will be able to navigate the site using the GUI-like front-end where you can visit your neighbor by clicking an arrow key and causing a flip-screen event. So the site does have a very minimal sense of being a "virtual space.”
+
+Users will also have a PM system and will be able to message any other users.
+
+Possible ERD items may include: Users, Plots, Messages.
