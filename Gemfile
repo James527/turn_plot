@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
@@ -13,6 +12,11 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+
+# Flexible authentication solution for Rails with Warden
+gem 'devise'
+# Simple authorization solution for Rails which is decoupled from user roles. All permissions are stored in a single location.
+gem 'cancan', '~> 1.6.10'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
