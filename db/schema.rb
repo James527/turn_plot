@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720163459) do
+ActiveRecord::Schema.define(version: 20150720175452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,22 +19,31 @@ ActiveRecord::Schema.define(version: 20150720163459) do
   create_table "correspondents", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
+  add_index "correspondents", ["user_id"], name: "index_correspondents_on_user_id", using: :btree
+
   create_table "letters", force: :cascade do |t|
-    t.string   "send_to",    default: "", null: false
-    t.string   "header",     default: "", null: false
-    t.text     "content",    default: "", null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "send_to",          default: "", null: false
+    t.string   "header",           default: "", null: false
+    t.text     "content",          default: "", null: false
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.integer  "correspondent_id"
   end
+
+  add_index "letters", ["correspondent_id"], name: "index_letters_on_correspondent_id", using: :btree
 
   create_table "plots", force: :cascade do |t|
     t.text     "content",     default: "<p>Hello World!</p>", null: false
     t.boolean  "active_plot", default: false
     t.datetime "created_at",                                  null: false
     t.datetime "updated_at",                                  null: false
+    t.integer  "user_id"
   end
+
+  add_index "plots", ["user_id"], name: "index_plots_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "uname",                  default: "", null: false
@@ -57,4 +66,7 @@ ActiveRecord::Schema.define(version: 20150720163459) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "correspondents", "users"
+  add_foreign_key "letters", "correspondents"
+  add_foreign_key "plots", "users"
 end
