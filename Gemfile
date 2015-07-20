@@ -18,6 +18,11 @@ gem 'devise'
 # Simple authorization solution for Rails which is decoupled from user roles. All permissions are stored in a single location.
 gem 'cancan', '~> 1.6.10'
 
+# CKEditor is a javascript library of the WYSIWYG rich-text editor. This gem integrates CKEditor with Rails asset pipeline for easy of use
+# gem 'ckeditor_rails', '~> 4.5.1'
+# Whitelist-based Ruby HTML and CSS sanitizer
+# gem 'sanitize', '~> 4.0.0'
+
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
