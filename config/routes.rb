@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  resources :correspondents
-  resources :letters
+  # resources :correspondents
+  # resources :letters
 
   # resources :correspondents do
   #   resources :letters do
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   #   end
   # end
 
-  resources :plots
+  # resources :plots
 
   # Root of the site
   root 'letters#index'
