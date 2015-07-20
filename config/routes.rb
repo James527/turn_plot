@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
 
-  # resources :correspondents
+  resources :correspondents
   # resources :letters
 
   # resources :correspondents do

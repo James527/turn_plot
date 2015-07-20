@@ -1,5 +1,5 @@
 class CorrespondentsController < ApplicationController
-  # before_action :set_correspondent, only: [:show, :edit, :update, :destroy]
+  before_action :set_correspondent, only: [:show, :edit, :update, :destroy]
 
   # GET /correspondents
   # GET /correspondents.json
