@@ -4,14 +4,12 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
 
-  resources :correspondents
+  # resources :correspondents
   # resources :letters
 
-  # resources :correspondents do
-  #   resources :letters do
-
-  #   end
-  # end
+  resources :correspondents do
+    resources :letters
+  end
 
   # resources :plots
 

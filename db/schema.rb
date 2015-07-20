@@ -17,17 +17,23 @@ ActiveRecord::Schema.define(version: 20150720163459) do
   enable_extension "plpgsql"
 
   create_table "correspondents", force: :cascade do |t|
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
+  add_index "correspondents", ["user_id"], name: "index_correspondents_on_user_id", using: :btree
+
   create_table "letters", force: :cascade do |t|
-    t.string   "send_to",    default: "", null: false
-    t.string   "header",     default: "", null: false
-    t.text     "content",    default: "", null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.string   "send_to",          default: "", null: false
+    t.string   "header",           default: "", null: false
+    t.text     "content",          default: "", null: false
+    t.integer  "correspondent_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
+
+  add_index "letters", ["correspondent_id"], name: "index_letters_on_correspondent_id", using: :btree
 
   create_table "plots", force: :cascade do |t|
     t.text     "content",     default: "<p>Hello World!</p>", null: false
