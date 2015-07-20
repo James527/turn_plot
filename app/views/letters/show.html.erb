@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Send to:</strong>
+  <%= @letter.send_to %>
+</p>
+
+<p>
+  <strong>Header:</strong>
+  <%= @letter.header %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @letter.content %>
+</p>
+
+<%= link_to 'Edit', edit_letter_path(@letter) %> |
+<%= link_to 'Back', letters_path %>

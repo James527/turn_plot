@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   resources :plots
 
   # Root of the site
-  root 'correspondents#index'
+  root 'letters#index'
 
 end
