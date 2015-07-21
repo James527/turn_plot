@@ -18,6 +18,6 @@ Rails.application.routes.draw do
     resources :letters
   end
 
-  # resources :plots
+  resources :plots
 
 end
