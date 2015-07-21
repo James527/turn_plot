@@ -11,10 +11,10 @@
 
 <ul>
 	<% @correspondent.letters.each do |letter| %>
-		<li>Sent To: <%= letter.send_to %> | Header: <%= letter.header %></li>
-		<p>Content: <%= letter.content %></p>
+		<li>Sent To: <%= letter.send_to %> | Subject: <%= letter.subject %> | <%= link_to 'Read', correspondent_letter_path(@correspondent.id, letter.id), method: :get %></li>
 	<% end %>
 </ul>
 
-
-<%= link_to 'Back', correspondents_path %>
+<br>
+<%= link_to 'New Letter', new_correspondent_letter_path(@correspondent.id), method: :get %><br>
+<%= link_to 'Back to Correspondents', correspondents_path %>

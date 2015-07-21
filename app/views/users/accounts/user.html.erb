@@ -1,13 +1,8 @@
-<h1>Account</h1>
-<p>User ID: <%= @user.id %></p>
+<h1><%= @user.username %></h1>
 <p>Username: <%= @user.username %></p>
 <p>Email: <%= @user.email %></p>
-<p>Created: <%= @user.created_at %></p>
-<p>Updated: <%= @user.updated_at %></p>
-<p>Sign in Count: <%= @user.sign_in_count %></p>
 
-<br>
-<%= link_to 'Edit User', edit_user_registration_path %> | 
+<br> 
 <%= link_to 'Back to Accounts', accounts_path %>
 
 <br>
