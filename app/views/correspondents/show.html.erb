@@ -11,7 +11,7 @@
 
 <ul>
 	<% @correspondent.letters.each do |letter| %>
-		<li>Sent To: <%= letter.send_to %> | Header: <%= letter.header %> | <%= link_to 'Read', correspondent_letter_path(@correspondent.id, letter.id), method: :get %></li>
+		<li>Sent To: <%= letter.send_to %> | Subject: <%= letter.subject %> | <%= link_to 'Read', correspondent_letter_path(@correspondent.id, letter.id), method: :get %></li>
 	<% end %>
 </ul>
 

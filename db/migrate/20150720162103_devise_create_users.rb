@@ -7,8 +7,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :encrypted_password, null: false, default: ""
 
       ## Plot Data
-      # t.integer :x, null: false
-      # t.integer :y, null: false
+      t.integer :x, null: false, default: 0
+      t.integer :y, null: false, default: 0
 
       ## Recoverable
       t.string   :reset_password_token
