@@ -41,6 +41,11 @@ class LettersController < ApplicationController
     # end
   end
 
+  def read
+    @letter.update_attribute(:read, true)
+    redirect_to @correspondent, notice: "Letter has been marked as read"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_correspondent
