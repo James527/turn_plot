@@ -13,5 +13,5 @@
   <%= @letter.content %>
 </p>
 
-<%= link_to 'Edit', edit_correspondent_letter_path(@letter) %> |
+<%= link_to 'Edit', edit_correspondent_letter_path(@letter.correspondent.id ,@letter.id) %> |
 <%= link_to 'Back', correspondent_letters_path %>

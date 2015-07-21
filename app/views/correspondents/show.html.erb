@@ -16,5 +16,5 @@
 	<% end %>
 </ul>
 
-
-<%= link_to 'Back', correspondents_path %>
+<%= link_to 'New Letter', new_correspondent_letter_path(@correspondent.id), method: :get %><br>
+<%= link_to 'Back to Correspondents', correspondents_path %>

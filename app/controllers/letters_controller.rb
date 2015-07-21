@@ -18,9 +18,9 @@ class LettersController < ApplicationController
     @letter = @correspondent.letters.build
   end
 
-  # # GET /letters/1/edit
-  # def edit
-  # end
+  # GET /letters/1/edit
+  def edit
+  end
 
   # POST /letters
   # POST /letters.json
