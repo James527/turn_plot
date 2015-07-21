@@ -1,5 +1,9 @@
 <h1>Listing Correspondents</h1>
 
+<ul class="correspondents">
+	<% @correspondents.each do |correspondent| %>
+		<li>Correspondent ID: <%= correspondent.id %> | User: <%= correspondent.user.username %> | <%= link_to 'Show', correspondent_path(correspondent.id) %> | <%= link_to 'Delete', correspondent_path(correspondent.id), data: { confirm: "Are you sure?" }, method: :delete %>
+		</li>
+	<% end %>
+</ul>
 <br>
-
-<%= link_to 'New Correspondent', new_correspondent_path %>
