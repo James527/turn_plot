@@ -1,15 +1,24 @@
 class Users::AccountsController < ApplicationController
   before_action :set_user, only: :user
 
+  # GET /user/1
+  # GET /user/1.json
+  def user
+    if @user == current_user
+      redirect_to account_path
+    end
+  end
+
   # GET /index
   # GET /index.json
   def index
     @users = User.all
   end
 
-  # GET /user/1
-  # GET /user/1.json
-  def user
+  # GET /account
+  # GET /account.json
+  def account
+    @user = current_user
   end
 
   private

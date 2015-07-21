@@ -1,0 +1,15 @@
+<h1><%= @user.username %></h1>
+<p>User ID: <%= @user.id %></p>
+<p>Username: <%= @user.username %></p>
+<p>Email: <%= @user.email %></p>
+<p>Created: <%= @user.created_at %></p>
+<p>Updated: <%= @user.updated_at %></p>
+<p>Sign in Count: <%= @user.sign_in_count %></p>
+<p>Current IP: <%= @user.current_sign_in_ip %></p>
+<p>Last IP: <%= @user.last_sign_in_ip %></p>
+
+<br>
+<%= link_to 'Edit User', edit_user_registration_path %> | 
+<%= link_to 'Back to Accounts', accounts_path %>
+
+<br>
