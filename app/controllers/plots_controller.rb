@@ -1,4 +1,5 @@
 class PlotsController < ApplicationController
+  before_action :set_user # only: [:show, :edit, :update, :destroy]
   before_action :set_plot, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index, :show]
 
@@ -15,7 +16,7 @@ class PlotsController < ApplicationController
 
   # GET /plots/new
   def new
-    @plot = Plot.new
+    @plot = @user.plots.build
   end
 
   # GET /plots/1/edit
@@ -25,17 +26,19 @@ class PlotsController < ApplicationController
   # POST /plots
   # POST /plots.json
   def create
-    @plot = Plot.new(plot_params)
+    @plot = @user.plots.create(plot_params)
+    redirect_to @plot
+    # @plot = Plot.new(plot_params)
 
-    respond_to do |format|
-      if @plot.save
-        format.html { redirect_to @plot, notice: 'Plot was successfully created.' }
-        format.json { render :show, status: :created, location: @plot }
-      else
-        format.html { render :new }
-        format.json { render json: @plot.errors, status: :unprocessable_entity }
-      end
-    end
+    # respond_to do |format|
+    #   if @plot.save
+    #     format.html { redirect_to @plot, notice: 'Plot was successfully created.' }
+    #     format.json { render :show, status: :created, location: @plot }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @plot.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /plots/1
@@ -63,6 +66,11 @@ class PlotsController < ApplicationController
   end
 
   private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_user
+      @user = current_user
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_plot
       @plot = Plot.find(params[:id])
