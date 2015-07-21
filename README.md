@@ -30,10 +30,18 @@ Ruby on Rails + SQL + AJAX + jQuery + Backbone
 
 # Planning & Wireframes:
 
+
+
 # Issues
+
+
 
 # TODO:
 
 ### TODO for MVP: ###
 
+
+
 ### TODO extras: ###
+
+

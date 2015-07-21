@@ -70,5 +70,5 @@ class PlotsController < ApplicationController
   #   # Never trust parameters from the scary internet, only allow the white list through.
   #   def plot_params
   #     params.require(:plot).permit(:content)
-    end
+    # end
 end
