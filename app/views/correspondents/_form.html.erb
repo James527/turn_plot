@@ -1,17 +1,3 @@
-<%= form_for(@correspondent) do |f| %>
-  <% if @correspondent.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@correspondent.errors.count, "error") %> prohibited this correspondent from being saved:</h2>
-
-      <ul>
-      <% @correspondent.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
+<%= form_for([@user, @user.correspondent.build]) do |f| %>
     <%= f.submit %>
-  </div>
 <% end %>

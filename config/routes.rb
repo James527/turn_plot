@@ -1,18 +1,22 @@
 Rails.application.routes.draw do
-  devise_for :users
-
-  # resources :correspondents
-  # resources :letters
-
-  # resources :correspondents do
-  #   resources :letters do
-
-  #   end
-  # end
-
-  # resources :plots
 
   # Root of the site
-  root 'letters#index'
+  root 'users/accounts#index'
+
+  # User routes made with devise
+  devise_for :users, controllers: {
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
+  }
+
+  # Account routes, they dip into devise's user pool
+  get 'user/:id' => 'users/accounts#user'
+  get 'accounts' => 'users/accounts#index'
+
+  resources :correspondents do
+    resources :letters
+  end
+
+  # resources :plots
 
 end

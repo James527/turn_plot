@@ -1,6 +1,7 @@
 class CreateCorrespondents < ActiveRecord::Migration
   def change
     create_table :correspondents do |t|
+    	t.references :user, index: true
 
 		t.timestamps null: false
     end

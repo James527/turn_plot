@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing of Accounts</h1>
+
+	<p>LIST ALL THE ACCOUNTS!!!</p>
+
+	<ul class="accounts">
+		<% @users.each do |user| %>
+			<li>
+				<a href='/user/<%= user.id %>'><%= user.username %></a> | 
+				<%= user.email %> | 
+				created: <%= user.created_at %> | 
+				<%= link_to 'Edit User', edit_user_registration_path %>
+			</li>
+		<% end %>
+	</ul>
+<br>
+<%= link_to 'New User', new_user_registration_path %>

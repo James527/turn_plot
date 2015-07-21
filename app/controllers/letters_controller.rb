@@ -1,5 +1,5 @@
 class LettersController < ApplicationController
-  # before_action :set_letter, only: [:show, :edit, :update, :destroy]
+  before_action :set_correspondent, only: [:show, :edit, :update, :destroy]
 
   # # GET /letters
   # # GET /letters.json
@@ -21,21 +21,24 @@ class LettersController < ApplicationController
   # def edit
   # end
 
-  # # POST /letters
-  # # POST /letters.json
-  # def create
-  #   @letter = Letter.new(letter_params)
+  # POST /letters
+  # POST /letters.json
+  def create
+    @letter = @correspondent.letters.create(letter_params)
+    # @letter = Letter.new(letter_params)
 
-  #   respond_to do |format|
-  #     if @letter.save
-  #       format.html { redirect_to @letter, notice: 'Letter was successfully created.' }
-  #       format.json { render :show, status: :created, location: @letter }
-  #     else
-  #       format.html { render :new }
-  #       format.json { render json: @letter.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+    redirect_to @letter
+
+    # respond_to do |format|
+    #   if @letter.save
+    #     format.html { redirect_to @letter, notice: 'Letter was successfully created.' }
+    #     format.json { render :show, status: :created, location: @letter }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @letter.errors, status: :unprocessable_entity }
+    #   end
+    # end
+  end
 
   # # PATCH/PUT /letters/1
   # # PATCH/PUT /letters/1.json
@@ -61,14 +64,14 @@ class LettersController < ApplicationController
   #   end
   # end
 
-  # private
-  #   # Use callbacks to share common setup or constraints between actions.
-  #   def set_letter
-  #     @letter = Letter.find(params[:id])
-  #   end
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_correspondent
+      @correspondent = Correspondent.find(params[:id])
+    end
 
-  #   # Never trust parameters from the scary internet, only allow the white list through.
-  #   def letter_params
-  #     params.require(:letter).permit(:send_to, :header, :content)
-  #   end
+    # Never trust parameters from the scary internet, only allow the white list through.
+    def letter_params
+      params[:letter]
+    end
 end

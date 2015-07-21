@@ -1,3 +1,3 @@
 class Letter < ActiveRecord::Base
-	# belongs_to :correspondent
+	belongs_to :correspondent
 end
