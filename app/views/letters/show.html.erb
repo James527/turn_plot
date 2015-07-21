@@ -13,5 +13,6 @@
   <%= @letter.content %>
 </p>
 
-<%= link_to 'Edit', edit_correspondent_letter_path(@letter.correspondent.id ,@letter.id) %> |
+<%= link_to 'Mark as Read', read_correspondent_letter_path(@letter.correspondent.id, @letter.id), method: :patch %> | 
+<%= link_to 'Edit', edit_correspondent_letter_path(@letter.correspondent.id, @letter.id) %> |
 <%= link_to 'Back', correspondent_letters_path %>

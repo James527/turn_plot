@@ -1,7 +1,28 @@
 <p>
+  <strong>Title:</strong>
+  <%= @plot.title %>
+</p>
+<p>
   <strong>Content:</strong>
   <%= @plot.content %>
 </p>
+<p>
+  <strong>Active:</strong>
+  <%= @plot.active_plot %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @plot.user.username %>
+</p>
+<p>
+  <strong>X-axis:</strong>
+  <%= @plot.user.x %>
+</p>
+<p>
+  <strong>Y-axis:</strong>
+  <%= @plot.user.y %>
+</p>
+
 
 <%= link_to 'Edit', edit_plot_path(@plot) %> |
 <%= link_to 'Back', plots_path %>
