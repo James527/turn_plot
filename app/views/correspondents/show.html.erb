@@ -1,9 +1,20 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Correspondent ID:</strong>
-  <%= @correspondent.created_at %>
+  <%= @correspondent.id %>
+
+  <strong>User ID:</strong>
+  <%= @correspondent.user_id %>
+
+  <strong>User:</strong>
+  <%= @correspondent.user.username %>
 </p>
+
+<ul>
+	<% @correspondent.letters.each do |letter| %>
+		<li>Sent To: <%= letter.send_to %> | Header: <%= letter.header %></li>
+		<p>Content: <%= letter.content %></p>
+	<% end %>
+</ul>
 
 
 <%= link_to 'Back', correspondents_path %>

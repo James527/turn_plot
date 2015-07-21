@@ -1,5 +1,3 @@
-<p id="notice"><%= notice %></p>
-
 <p>
   <strong>Send to:</strong>
   <%= @letter.send_to %>
@@ -15,5 +13,5 @@
   <%= @letter.content %>
 </p>
 
-<%= link_to 'Edit', edit_letter_path(@letter) %> |
-<%= link_to 'Back', letters_path %>
+<%= link_to 'Edit', edit_correspondent_letter_path(@letter) %> |
+<%= link_to 'Back', correspondent_letters_path %>

@@ -1,5 +1,6 @@
 class CorrespondentsController < ApplicationController
-  # before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_correspondent, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /correspondents
   # GET /correspondents.json
@@ -14,7 +15,7 @@ class CorrespondentsController < ApplicationController
 
   # GET /correspondents/new
   def new
-    @correspondent = Correspondent.new
+    @correspondent = current_user.correspondents.build
   end
 
   # GET /correspondents/1/edit
@@ -24,11 +25,7 @@ class CorrespondentsController < ApplicationController
   # POST /correspondents
   # POST /correspondents.json
   def create
-
-    # @correspondent = @user.correspondents.create(correspondent_params)
-    # redirect_to @correspondent
-
-    @correspondent = Correspondent.new(correspondent_params)
+    @correspondent = current_user.correspondents.build(correspondent_params)
 
     respond_to do |format|
       if @correspondent.save
@@ -41,19 +38,19 @@ class CorrespondentsController < ApplicationController
     end
   end
 
-  # # PATCH/PUT /correspondents/1
-  # # PATCH/PUT /correspondents/1.json
-  # def update
-  #   respond_to do |format|
-  #     if @correspondent.update(correspondent_params)
-  #       format.html { redirect_to @correspondent, notice: 'Correspondent was successfully updated.' }
-  #       format.json { render :show, status: :ok, location: @correspondent }
-  #     else
-  #       format.html { render :edit }
-  #       format.json { render json: @correspondent.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+  # PATCH/PUT /correspondents/1
+  # PATCH/PUT /correspondents/1.json
+  def update
+    respond_to do |format|
+      if @correspondent.update(correspondent_params)
+        format.html { redirect_to @correspondent, notice: 'Correspondent was successfully updated.' }
+        format.json { render :show, status: :ok, location: @correspondent }
+      else
+        format.html { render :edit }
+        format.json { render json: @correspondent.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # DELETE /correspondents/1
   # DELETE /correspondents/1.json
@@ -66,10 +63,10 @@ class CorrespondentsController < ApplicationController
   end
 
   private
-  #   # Use callbacks to share common setup or constraints between actions.
-  #   def set_user
-  #     @user = User.find(params[:id])
-  #   end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_correspondent
+      @correspondent = Correspondent.find(params[:id])
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def correspondent_params
