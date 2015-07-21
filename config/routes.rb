@@ -14,10 +14,21 @@ Rails.application.routes.draw do
   get 'accounts' => 'users/accounts#index'
   get 'account' => 'users/accounts#account'
 
+  # Correspondent routes with nested Letter routes
   resources :correspondents do
-    resources :letters
+    resources :letters do
+      member do
+        patch :read
+      end
+    end
   end
 
+  # Plot routes
   resources :plots
+  # Activate this plot
+
+  # Coordinate and User Plot routes
+  # get 'plot/:x' => 'plots#index'
+  # get 'user/:id/plot' => 'plots#index'
 
 end
