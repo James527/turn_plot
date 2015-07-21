@@ -1,21 +1,22 @@
 class LettersController < ApplicationController
-  before_action :set_correspondent, only: [:show, :edit, :update, :destroy]
+  before_action :set_correspondent
+  before_action :set_letter, except: [:create, :new]
 
-  # # GET /letters
-  # # GET /letters.json
-  # def index
-  #   @letters = Letter.all
-  # end
+  # GET /letters
+  # GET /letters.json
+  def index
+    @letters = Letter.all
+  end
 
-  # # GET /letters/1
-  # # GET /letters/1.json
-  # def show
-  # end
+  # GET /letters/1
+  # GET /letters/1.json
+  def show
+  end
 
-  # # GET /letters/new
-  # def new
-  #   @letter = Letter.new
-  # end
+  # GET /letters/new
+  def new
+    @letter = @correspondent.letters.build
+  end
 
   # # GET /letters/1/edit
   # def edit
@@ -25,9 +26,9 @@ class LettersController < ApplicationController
   # POST /letters.json
   def create
     @letter = @correspondent.letters.create(letter_params)
-    # @letter = Letter.new(letter_params)
+    redirect_to @correspondent
 
-    redirect_to @letter
+    # @letter = Letter.new(letter_params)
 
     # respond_to do |format|
     #   if @letter.save
@@ -67,11 +68,15 @@ class LettersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_correspondent
-      @correspondent = Correspondent.find(params[:id])
+      @correspondent = Correspondent.find(params[:correspondent_id])
+    end
+
+    def set_letter
+      @letter = @correspondent.letters.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def letter_params
-      params[:letter]
+      params[:letter].permit(:send_to, :header, :content)
     end
 end
