@@ -15,8 +15,8 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
-# Simple authorization solution for Rails which is decoupled from user roles. All permissions are stored in a single location.
-gem 'cancan', '~> 1.6.10'
+# Continuation of the simple authorization solution for Rails which is decoupled from user roles. All permissions are stored in a single location.
+gem 'cancancan', '~> 1.10'
 
 # CKEditor is a javascript library of the WYSIWYG rich-text editor. This gem integrates CKEditor with Rails asset pipeline for easy of use
 # gem 'ckeditor_rails', '~> 4.5.1'
@@ -52,3 +52,7 @@ group :development, :test do
   gem 'spring'
 end
 
+# Enables serving assets in production and setting your logger to standard out
+gem 'rails_12factor', '~> 0.0.3', group: :production
+
+ruby '2.2.0'
