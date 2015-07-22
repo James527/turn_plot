@@ -8,8 +8,13 @@ class Users::AccountsController < ApplicationController
 
   # POST /register
   def register
+
     # register User
+
+    
     # create new Plot
+
+    # redirect to user accounts
     redirect_to accounts_path
   end
 
