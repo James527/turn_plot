@@ -29,7 +29,7 @@ class CorrespondentsController < ApplicationController
 
     respond_to do |format|
       if @correspondent.save
-        format.html { redirect_to @correspondent, notice: 'Correspondent was successfully created.' }
+        format.html { redirect_to correspondents_path, notice: 'Correspondent was successfully created.' }
         format.json { render :show, status: :created, location: @correspondent }
       else
         format.html { render :new }
