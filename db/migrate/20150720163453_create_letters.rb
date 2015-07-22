@@ -6,6 +6,7 @@ class CreateLetters < ActiveRecord::Migration
     	t.text :content, null: false, default: ""
     	t.references :correspondent, index: true
     	t.boolean :read, default: false
+      # t.boolean :trash, default: false
 
 		t.timestamps null: false
     end

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # Root of the site
-  root 'users/accounts#index'
+  root 'plots#index'
 
   # User routes made with devise
   devise_for :users, controllers: {
@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   }
 
   # Account routes, they dip into devise's user pool
+  get 'register' => 'users/accounts#register'
+  get 'login' => 'users/accounts#login'
   get 'user/:id' => 'users/accounts#user'
   get 'accounts' => 'users/accounts#index'
   get 'account' => 'users/accounts#account'
@@ -30,5 +32,6 @@ Rails.application.routes.draw do
   # Coordinate and User Plot routes
   # get 'plot/:x' => 'plots#index'
   # get 'user/:id/plot' => 'plots#index'
+
 
 end

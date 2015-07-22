@@ -35,6 +35,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications
+gem 'puma'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
@@ -54,5 +57,6 @@ end
 
 # Enables serving assets in production and setting your logger to standard out
 gem 'rails_12factor', '~> 0.0.3', group: :production
+
 
 ruby '2.2.0'

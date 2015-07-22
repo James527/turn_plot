@@ -1,7 +1,7 @@
 # turn_plot
-TurnPlot is a social networking application based on plots of digital real estate. We provide a space for users to do with as they please. Users can create a portfolio, promote a cause that their passionate about, or just leave a calling card.
+TurnPlot is a social networking application based on plots of digital real estate. We provide a space for users to cultivate however they may choose. Users can create a portfolio, promote a cause that their passionate about, or just leave a calling card.
 
-  (╯°□°)╯︵ ┻━┻
+Take your turn, give your plot a story.
 
 # Technologies Used:
 
@@ -34,7 +34,7 @@ Ruby on Rails + SQL + AJAX + jQuery + Backbone
 
 # Issues
 
-
+  (╯°□°)╯︵ ┻━┻
 
 # TODO:
 

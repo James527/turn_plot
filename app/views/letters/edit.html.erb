@@ -3,4 +3,4 @@
 <%= render 'form' %>
 
 <%= link_to 'Back to Letter', correspondent_letter_path %> |
-<%= link_to 'Back to Correspondent', correspondent_path() %>
+<%= link_to 'Back to Correspondent', correspondent_path(@letter.correspondent.id) %>
