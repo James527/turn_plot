@@ -13,5 +13,17 @@
   <%= @letter.content %>
 </p>
 
+<p>
+  <strong>Aloha:</strong>
+  <div id="editable">
+  	<p>This line is editable thanks to aloha</p>
+  </div>
+</p>
+
 <%= link_to 'Mark as Read', read_correspondent_letter_path(@letter.correspondent.id, @letter.id), method: :patch %> | 
 <%= link_to 'Edit # eventually make a trash path', edit_correspondent_letter_path(@letter.correspondent.id, @letter.id) %> |
+
+
+<script type="text/javascript">
+	aloha(document.querySelector('#editable'));
+</script>
