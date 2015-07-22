@@ -1,6 +1,16 @@
 class Users::AccountsController < ApplicationController
   before_action :set_user, only: :user
 
+  # GET /register
+  def register
+    redirect_to new_user_registration_path
+  end
+
+  # GET /login
+  def login
+    redirect_to new_user_session_path
+  end
+
   # GET /user/1
   # GET /user/1.json
   def user
