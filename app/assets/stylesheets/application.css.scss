@@ -13,3 +13,22 @@
  *= require_tree .
  *= require_self
  */
+
+@font-face {
+  font-family: 'Archistico';
+  src:font-url('Archistico_Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body{
+
+}
+
+header {
+
+}
+
+h1 {
+	font-family: 'Archistico';
+}
