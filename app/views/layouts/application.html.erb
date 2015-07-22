@@ -8,7 +8,9 @@
 	</head>
 	<body>
 		<header>
-			<h3 class="site-title">TurnPlot</h3>
+			<a href="/">
+				<h3 class="site-title">TurnPlot</h3>
+			</a>
 			<% if (current_user) %>
 				<div class="header-nav">
 					<%= link_to current_user.username, account_path, method: :get %> | 
