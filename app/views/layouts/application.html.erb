@@ -15,7 +15,6 @@
 			<% if (current_user) %>
 				<div class="header-nav">
 					<%= link_to current_user.username, account_path, method: :get %> | 
-					<%= link_to 'Home', root_path, method: :get %> | 
 					<%= link_to 'Account List', accounts_path, method: :get %> | 
 					<%= link_to 'Plots', plots_path, method: :get %> | 
 					<%= link_to 'Correspondents', correspondents_path, method: :get %> | 
