@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   # Root of the site
-  root 'users/accounts#index'
+  root 'plots#index'
 
   # User routes made with devise
   devise_for :users, controllers: {
