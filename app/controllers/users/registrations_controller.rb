@@ -1,7 +1,8 @@
 class Users::RegistrationsController < Devise::RegistrationsController
+  before_action :get_last_user, only: [:create]
   before_filter :configure_sign_up_params, only: [:create]
   before_filter :configure_account_update_params, only: [:update]
-  after_action :new_plot_coordinates, only: [:create]
+  after_action :new_coordinates, only: [:create]
 
   # GET /resource/sign_up
   def new
@@ -60,15 +61,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
-# def generate_plot_coordinates  
-# end
+  # Gets the last user from the database
+  def get_last_user
+    @last_user = User.last
+  end
 
-  def new_plot_coordinates
-    @new_user = current_user
-
-    last_user = User.last
-    lastX = last_user.x
-    lastY = last_user.y
+  # Generates and saves new grid coordinates for the created user
+  def new_coordinates
+    lastX = @last_user.x
+    lastY = @last_user.y
 
     puts lastX
     puts lastY
@@ -90,17 +91,14 @@ class Users::RegistrationsController < Devise::RegistrationsController
       newY = 1
       @new_coordinates = [newX, newY]
     end
-    puts @new_coordinates
 
-    @plotX = @new_coordinates[0]
-    @plotY = @new_coordinates[1]
+    plotX = @new_coordinates[0]
+    plotY = @new_coordinates[1]
 
-    # puts @plotX
-    # puts @plotY
-
-    @new_user.x = @plotX
-    @new_user.y = @plotY
-    @new_user.save
+    new_user = current_user
+    new_user.x = plotX
+    new_user.y = plotY
+    new_user.save
   end
 
 end
