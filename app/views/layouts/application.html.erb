@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>TurnPlot</title>
-		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 		<script src="http://www.alohaeditor.org/download/aloha.min.js"></script>
 		<%= csrf_meta_tags %>
@@ -10,14 +10,14 @@
 	<body>
 		<header>
 			<a href="/">
-				<h3 class="site-title">TurnPlot</h3>
+				<h1 class="site-title">TurnPlot</h1>
 			</a>
 			<% if (current_user) %>
 				<div class="header-nav">
 					<%= link_to current_user.username, account_path, method: :get %> | 
 					<%= link_to 'Account List', accounts_path, method: :get %> | 
 					<%= link_to 'Plots', plots_path, method: :get %> | 
-					<%= link_to 'Correspondents', correspondents_path, method: :get %> | 
+					<%= link_to 'Inbox', correspondents_path, method: :get %> | 
 					<%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
 				</div>
 			<% else %>

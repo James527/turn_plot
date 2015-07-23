@@ -1,19 +1,10 @@
-<p>
-  <strong>Send to:</strong>
-  <%= @letter.send_to %>
-</p>
-
-<p>
-  <strong>Subject:</strong>
-  <%= @letter.subject %>
-</p>
-
-<p>
-  <strong>Content:</strong>
-  <%= @letter.content %>
-</p>
-
-
-
-<%= link_to 'Mark as Read', read_correspondent_letter_path(@letter.correspondent.id, @letter.id), method: :patch %> | 
-<%= link_to 'Edit # eventually make a trash path', edit_correspondent_letter_path(@letter.correspondent.id, @letter.id) %>
+<div class="modal-wrapper">
+	<div class="modal">
+		<h2>Sent to: <%= @letter.send_to %> | Subject: <%= @letter.subject %></h2><br>
+		<div class="letter-content"><%= @letter.content %></div><br>
+		<%= link_to 'Mark as Read', read_correspondent_letter_path(@letter.correspondent.id, @letter.id), method: :patch %>
+		<br>
+		<br>
+		<%= link_to 'Edit # eventually make a trash path', edit_correspondent_letter_path(@letter.correspondent.id, @letter.id) %>
+	</div>
+</div>

@@ -1,14 +1,19 @@
-<h1>Listing Correspondents</h1>
-
-<ul class="correspondents">
-	<% @correspondents.each do |correspondent| %>
-		<li>Correspondent ID: <%= correspondent.id %> | User: <%= correspondent.user.username %> | <%= link_to 'Show', correspondent_path(correspondent.id) %> | <%= link_to 'Delete', correspondent_path(correspondent.id), data: { confirm: "Are you sure?" }, method: :delete %>
-		</li>
-	<% end %>
-</ul>
-<br>
-<%= link_to 'Create Correspondent', '/correspondents', method: :post %>
-<br>
-<br>
-<br>
-<%= link_to 'New Correspondent', new_correspondent_path, method: :get %><!-- DELETE!!! -->
+<div class="modal-wrapper">
+	<div class="modal">
+		<h2>Inbox</h2>
+		<ul class="correspondents">
+			<% @correspondents.each do |correspondent| %>
+				<li><a href='/user/<%= correspondent.user_id %>'><%= correspondent.user.username %></a> | 
+					Correspondent ID: <%= correspondent.id %> | 
+					<%= link_to 'Show', correspondent_path(correspondent.id) %> | 
+					<%= link_to 'Delete', correspondent_path(correspondent.id), data: { confirm: "Are you sure?" }, method: :delete %>
+				</li>
+			<% end %>
+		</ul>
+		<br>
+		<%= link_to 'Create Correspondent', '/correspondents', method: :post %>
+		<br>
+		<br>
+		<%= link_to 'New C', new_correspondent_path, method: :get %><!-- DELETE!!! -->
+	</div>
+</div>

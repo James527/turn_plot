@@ -1,27 +1,17 @@
-<p>
-  <strong>Title:</strong>
-  <%= @plot.title %>
-</p>
-<p>
-  <strong>Content:</strong>
-  <%= @plot.content %>
-</p>
-<p>
-  <strong>Active:</strong>
-  <%= @plot.active_plot %>
-</p>
-<p>
-  <strong>User:</strong>
-  <%= @plot.user.username %>
-</p>
-<p>
-  <strong>X-axis:</strong>
-  <%= @plot.user.x %>
-</p>
-<p>
-  <strong>Y-axis:</strong>
-  <%= @plot.user.y %>
-</p>
+<div class="plot-info">
+  <p><%= @plot.title %> | <%= link_to 'Edit', edit_plot_path(@plot) %></p>
+  <p><a href='/user/<%= @plot.user.id %>'><%= @plot.user.username %></a></p>
+  <p>Coords: <%= @plot.user.x %>, <%= @plot.user.y %></p>
+  <p>Active: <%= @plot.active_plot %></p>
+</div>
+<br>
+<br>
+<div class="plot-wrapper">
+  <div class="plot" id="editable">
+    <%= @plot.content %>
+  </div>
+</div>
 
-
-<%= link_to 'Edit', edit_plot_path(@plot) %>
+<script type="text/javascript">
+  aloha(document.querySelector('#editable'));
+</script>

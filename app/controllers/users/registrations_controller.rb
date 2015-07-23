@@ -50,8 +50,8 @@ before_filter :configure_account_update_params, only: [:update]
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    super(resource)
-    # edit_user_registration_path(resource)
+    # super(resource)
+    account_path(resource)
   end
 
   # The path used after sign up for inactive accounts.

@@ -1,20 +1,19 @@
-<p>
-  <strong>Correspondent ID:</strong>
-  <%= @correspondent.id %>
-
-  <strong>User ID:</strong>
-  <%= @correspondent.user_id %>
-
-  <strong>User:</strong>
-  <%= @correspondent.user.username %>
-</p>
-
-<ul>
-	<% @correspondent.letters.each do |letter| %>
-		<li>Sent To: <%= letter.send_to %> | Subject: <%= letter.subject %> | Read: <%= letter.read %> | <%= link_to 'Letter Content', correspondent_letter_path(@correspondent.id, letter.id), method: :get %></li>
-	<% end %>
-</ul>
-
-<br>
-<%= link_to 'New Letter', new_correspondent_letter_path(@correspondent.id), method: :get %><br>
-<%= link_to 'Back to Correspondents', correspondents_path %>
+<div class="modal-wrapper">
+	<div class="modal">
+		<h2>User: <a href='/user/<%= @correspondent.user_id %>'><%= @correspondent.user.username %></a> | 
+			Correspondent ID: <%= @correspondent.id %></h2>
+		<br>
+		<ul>
+			<% @correspondent.letters.each do |letter| %>
+				<li>Sent To: <%= letter.send_to %> | 
+					<a href='/correspondents/<%= @correspondent.user_id %>/letters/<%= letter.id %>'>
+						Subject: <%= letter.subject %> | Read: <%= letter.read %>
+					</a>
+				</li>
+			<% end %>
+		</ul>
+		<br>
+		<%= link_to 'New Letter', new_correspondent_letter_path(@correspondent.id), method: :get %><br>
+		<%= link_to 'Back to Correspondents', correspondents_path %>
+	</div>
+</div>
