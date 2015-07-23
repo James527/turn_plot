@@ -31,10 +31,10 @@ Gems: Devise, puma, Aloha
 
 # Planning & Wireframes:
 
-First ERD: http://i.imgur.com/xrzlubR.jpg
-Second ERD: http://i.imgur.com/vbAmWZI.jpg
-Routes: http://i.imgur.com/FSHyy86.jpg
-Milestone4: http://i.imgur.com/o6cBbsR.jpg
+- First ERD: http://i.imgur.com/xrzlubR.jpg
+- Second ERD: http://i.imgur.com/vbAmWZI.jpg
+- Routes: http://i.imgur.com/FSHyy86.jpg
+- Milestone4: http://i.imgur.com/o6cBbsR.jpg
 
 
 # Issues
