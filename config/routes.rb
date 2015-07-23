@@ -29,9 +29,12 @@ Rails.application.routes.draw do
   end
 
   # Plot routes
-  resources :plots
-  # Activate this plot
-  post 'initial' => 'plots/plots#create_initial_plot'
+  resources :plots do
+    member do
+      # Activate this plot
+      patch :activate
+    end
+  end
 
   # Coordinate and User Plot routes
   # get 'plot/:x' => 'plots#index'

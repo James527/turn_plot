@@ -7,9 +7,10 @@
           <%= link_to plot.title, plot %>
           <span class="plot-links">
             <% if (plot.active_plot) %>
-              Active | 
+              Active | Deactivate <!-- Link goes here -->
             <% else %>
               Not Active | 
+              <%= link_to 'Activate', activate_plot_path(plot.id), method: :patch %> | 
             <% end %>
             <%= link_to 'Edit', edit_plot_path(plot) %> | 
             <%= link_to 'Destroy', plot, method: :delete, data: { confirm: 'Are you sure?' } %>
