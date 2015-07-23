@@ -7,7 +7,7 @@
 			<% @correspondent.letters.each do |letter| %>
 				<li>Sent To: <%= letter.send_to %> | 
 					<a href='/correspondents/<%= @correspondent.user_id %>/letters/<%= letter.id %>'>
-						Subject: <%= letter.subject %> | Read: <%= letter.read %>
+						Subject: <%= letter.subject %> | Read: <%= letter.has_read %>
 					</a>
 				</li>
 			<% end %>

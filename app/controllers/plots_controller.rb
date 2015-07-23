@@ -41,6 +41,15 @@ class PlotsController < ApplicationController
     # end
   end
 
+  # POST /initial
+  def create_initial_plot
+    # @plot = @user.plots.build
+    @plot = @user.plots.create
+    # @user = User.find(1).username
+    puts @plot
+    redirect_to plots_path
+  end
+
   # PATCH/PUT /plots/1
   # PATCH/PUT /plots/1.json
   def update
@@ -80,4 +89,5 @@ class PlotsController < ApplicationController
     def plot_params
       params.require(:plot).permit(:title, :content)
     end
+
 end

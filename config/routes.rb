@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :correspondents do
     resources :letters do
       member do
-        patch :read # should be :mark_read
+        patch :has_read
       end
     end
   end
@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   # Plot routes
   resources :plots
   # Activate this plot
+  post 'initial' => 'plots/plots#create_initial_plot'
 
   # Coordinate and User Plot routes
   # get 'plot/:x' => 'plots#index'

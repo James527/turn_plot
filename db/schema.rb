@@ -32,7 +32,8 @@ ActiveRecord::Schema.define(version: 20150720163459) do
     t.string   "subject",          default: "",    null: false
     t.text     "content",          default: "",    null: false
     t.integer  "correspondent_id"
-    t.boolean  "read",             default: false
+    t.boolean  "has_read",         default: false
+    t.boolean  "trash",            default: false
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
   end
@@ -40,12 +41,12 @@ ActiveRecord::Schema.define(version: 20150720163459) do
   add_index "letters", ["correspondent_id"], name: "index_letters_on_correspondent_id", using: :btree
 
   create_table "plots", force: :cascade do |t|
-    t.string   "title",       default: "My New Plot",         null: false
-    t.text     "content",     default: "<p>Hello World!</p>", null: false
+    t.string   "title",       default: "My New Plot",  null: false
+    t.text     "content",     default: "Hello World!", null: false
     t.boolean  "active_plot", default: false
     t.integer  "user_id"
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
   end
 
   add_index "plots", ["user_id"], name: "index_plots_on_user_id", using: :btree

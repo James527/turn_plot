@@ -1,32 +1,22 @@
 <div class="modal-wrapper">
   <div class="modal">
     <h2>All Plots</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Title</th>
-          <th>User</th>
-          <th>X-axis</th>
-          <th>Y-axis</th>
-          <th>Active?</th>
-          <th colspan="2"></th>
-        </tr>
-      </thead>
-
-      <tbody>
-        <% @plots.each do |plot| %>
-          <tr>
-            <td><%= link_to plot.title, plot %></td>
-            <td><a href='/user/<%= plot.user.id %>'><%= plot.user.username %></a></td>
-            <td><%= plot.user.x %></td>
-            <td><%= plot.user.y %></td>
-            <td><%= plot.active_plot %></td>
-            <td><%= link_to 'Edit', edit_plot_path(plot) %></td>
-            <td><%= link_to 'Destroy', plot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
+    <ul>
+      <% @plots.each do |plot| %>
+        <li>
+          <%= link_to plot.title, plot %>
+          <span class="plot-links">
+            <% if (plot.active_plot) %>
+              Active | 
+            <% else %>
+              Not Active | 
+            <% end %>
+            <%= link_to 'Edit', edit_plot_path(plot) %> | 
+            <%= link_to 'Destroy', plot, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </span>
+        </li>
+      <% end %>
+    </ul>
     <br>
     <%= link_to 'New Plot', new_plot_path %>
   </div>

@@ -1,17 +1,14 @@
+<div class="plot-wrapper">
+  <div class="plot" id="editable">
+    <%= @plot.content %>
+  </div>
+</div>
 <div class="plot-info">
   <p><%= @plot.title %> | <%= link_to 'Edit', edit_plot_path(@plot) %></p>
   <p><a href='/user/<%= @plot.user.id %>'><%= @plot.user.username %></a></p>
   <p>Coords: <%= @plot.user.x %>, <%= @plot.user.y %></p>
   <p>Active: <%= @plot.active_plot %></p>
 </div>
-<br>
-<br>
-<div class="plot-wrapper">
-  <div class="plot" id="editable">
-    <%= @plot.content %>
-  </div>
-</div>
-
 <script type="text/javascript">
   aloha(document.querySelector('#editable'));
 </script>
