@@ -187,3 +187,27 @@ th, td {
   min-height: 10em;
   width: 100%;
 }
+
+
+/*____MEDIA QUERY________________________________________________*/
+
+@media (max-width: 700px) {
+  
+  .site-title {
+    display: block;
+    text-align: center;
+    margin: 0;
+  }
+
+  .header-nav {
+    display: block;
+    margin: 0.5em 0 0;
+    float: none;
+    text-align: center;
+  }
+
+  .main-wrapper {
+    min-height: 400px;
+  }
+}
+
