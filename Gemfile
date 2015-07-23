@@ -18,8 +18,6 @@ gem 'devise'
 # Continuation of the simple authorization solution for Rails which is decoupled from user roles. All permissions are stored in a single location.
 # gem 'cancancan', '~> 1.10'
 
-# CKEditor is a javascript library of the WYSIWYG rich-text editor. This gem integrates CKEditor with Rails asset pipeline for easy of use
-# gem 'ckeditor_rails', '~> 4.5.1'
 # Whitelist-based Ruby HTML and CSS sanitizer
 # gem 'sanitize', '~> 4.0.0'
 

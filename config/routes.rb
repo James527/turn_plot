@@ -10,11 +10,14 @@ Rails.application.routes.draw do
   }
 
   # Account routes, they dip into devise's user pool
-  get 'register' => 'users/accounts#register'
+  get 'register' => 'users/accounts#new'
   get 'login' => 'users/accounts#login'
   get 'user/:id' => 'users/accounts#user'
   get 'accounts' => 'users/accounts#index'
   get 'account' => 'users/accounts#account'
+
+  # Registration route: creates new User + new Plot
+  post 'register' => 'users/accounts#register'
 
   # Correspondent routes with nested Letter routes
   resources :correspondents do

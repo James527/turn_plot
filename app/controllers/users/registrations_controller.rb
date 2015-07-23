@@ -3,14 +3,14 @@ before_filter :configure_sign_up_params, only: [:create]
 before_filter :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    super
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+  end
 
   # GET /resource/edit
   # def edit
@@ -40,7 +40,7 @@ before_filter :configure_account_update_params, only: [:update]
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.for(:sign_up) << :username
+    devise_parameter_sanitizer.for(:sign_up).push(:username, :x, :y)
   end
 
   # If you have extra params to permit, append them to the sanitizer.
@@ -50,8 +50,8 @@ before_filter :configure_account_update_params, only: [:update]
 
   # The path used after sign up.
   def after_sign_up_path_for(resource)
-    super(resource)
-    # edit_user_registration_path(resource)
+    # super(resource)
+    account_path(resource)
   end
 
   # The path used after sign up for inactive accounts.

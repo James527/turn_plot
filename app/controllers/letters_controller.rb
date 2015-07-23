@@ -1,6 +1,6 @@
 class LettersController < ApplicationController
   before_action :set_correspondent
-  before_action :set_letter, except: [:create, :new]
+  before_action :set_letter, except: [:create, :new, :index]
 
   # GET /letters
   # GET /letters.json

@@ -2,8 +2,20 @@ class Users::AccountsController < ApplicationController
   before_action :set_user, only: :user
 
   # GET /register
-  def register
+  def new
     redirect_to new_user_registration_path
+  end
+
+  # POST /register
+  def register
+
+    # register User
+
+    
+    # create new Plot
+
+    # redirect to user accounts
+    redirect_to accounts_path
   end
 
   # GET /login

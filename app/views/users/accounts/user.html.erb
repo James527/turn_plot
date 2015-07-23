@@ -1,8 +1,10 @@
-<h1><%= @user.username %></h1>
-<p>Username: <%= @user.username %></p>
-<p>Email: <%= @user.email %></p>
-
-<br> 
-<%= link_to 'Back to Accounts', accounts_path %>
-
-<br>
+<div class="modal-wrapper">
+	<div class="modal">
+		<h2><%= @user.username %></h2>
+		<p><%= @user.email %></p>
+		<p>Plot Coords: <%= @user.x %>, <%= @user.y %></p>
+		<br> 
+		<%= link_to 'Back to Accounts', accounts_path %>
+		<br>
+	</div>
+</div>
