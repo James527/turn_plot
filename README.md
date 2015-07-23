@@ -5,7 +5,8 @@ Take your turn, give your plot a story.
 
 # Technologies Used:
 
-Ruby on Rails + SQL + AJAX + jQuery + Backbone
+Ruby on Rails + PostgreSQL + jQuery
+Gems: Devise, puma, Aloha
 
 # Installation Instructions:
 
@@ -30,6 +31,10 @@ Ruby on Rails + SQL + AJAX + jQuery + Backbone
 
 # Planning & Wireframes:
 
+First ERD: http://i.imgur.com/xrzlubR.jpg
+Second ERD: http://i.imgur.com/vbAmWZI.jpg
+Routes: http://i.imgur.com/FSHyy86.jpg
+Milestone4: http://i.imgur.com/o6cBbsR.jpg
 
 
 # Issues
