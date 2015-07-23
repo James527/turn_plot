@@ -15,8 +15,6 @@ gem 'coffee-rails', '~> 4.1.0'
 
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
-# Continuation of the simple authorization solution for Rails which is decoupled from user roles. All permissions are stored in a single location.
-# gem 'cancancan', '~> 1.10'
 
 # Whitelist-based Ruby HTML and CSS sanitizer
 # gem 'sanitize', '~> 4.0.0'
@@ -36,11 +34,6 @@ gem 'bcrypt', '~> 3.1.7'
 # Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server for Ruby/Rack applications
 gem 'puma'
 
-# Use Unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

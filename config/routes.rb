@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   resources :correspondents do
     resources :letters do
       member do
-        patch :read # should be :mark_read
+        patch :has_read
       end
     end
   end

@@ -41,8 +41,8 @@ class LettersController < ApplicationController
     # end
   end
 
-  def read
-    @letter.update_attribute(:read, true)
+  def has_read
+    @letter.update_attribute(:has_read, true)
     redirect_to @correspondent, notice: "Letter has been marked as read"
   end
 
