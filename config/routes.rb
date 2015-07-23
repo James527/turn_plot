@@ -31,8 +31,9 @@ Rails.application.routes.draw do
   # Plot routes
   resources :plots do
     member do
-      # Activate this plot
+      # Activate and Deactivate plots
       patch :activate
+      patch :deactivate
     end
   end
 

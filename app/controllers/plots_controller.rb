@@ -1,6 +1,6 @@
 class PlotsController < ApplicationController
   before_action :set_user # only: [:show, :edit, :update, :destroy]
-  before_action :set_plot, only: [:show, :edit, :update, :destroy, :activate]
+  before_action :set_plot, only: [:show, :edit, :update, :destroy, :activate, :deactivate]
   before_action :authenticate_user!, except: [:index, :show]
 
   # GET /plots
@@ -45,6 +45,12 @@ class PlotsController < ApplicationController
   def activate
     @plot.update_attribute(:active_plot, true)
     redirect_to plot_path(@plot.id), notice: "Your plot has been activated"
+  end
+
+  # PATCH/PUT /deactivate
+  def deactivate
+    @plot.update_attribute(:active_plot, false)
+    redirect_to plots_path, notice: "Your plot has been deactivated"
   end
 
   # PATCH/PUT /plots/1

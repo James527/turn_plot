@@ -7,7 +7,7 @@
           <%= link_to plot.title, plot %>
           <span class="plot-links">
             <% if (plot.active_plot) %>
-              Active | Deactivate <!-- Link goes here -->
+              Active | <%= link_to 'Deactivate', deactivate_plot_path(plot.id), method: :patch %> |
             <% else %>
               Not Active | 
               <%= link_to 'Activate', activate_plot_path(plot.id), method: :patch %> | 
