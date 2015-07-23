@@ -6,18 +6,6 @@ class Users::AccountsController < ApplicationController
     redirect_to new_user_registration_path
   end
 
-  # POST /register
-  def register
-
-    # register User
-
-    
-    # create new Plot
-
-    # redirect to user accounts
-    redirect_to accounts_path
-  end
-
   # GET /login
   def login
     redirect_to new_user_session_path
@@ -41,6 +29,12 @@ class Users::AccountsController < ApplicationController
   # GET /account.json
   def account
     @user = current_user
+  end
+
+  # GET /account/list
+  def list
+    @user = current_user
+    @user_plots = @user.plots.all
   end
 
   private

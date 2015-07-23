@@ -16,8 +16,8 @@ Rails.application.routes.draw do
   get 'accounts' => 'users/accounts#index'
   get 'account' => 'users/accounts#account'
 
-  # Registration route: creates new User + new Plot
-  post 'register' => 'users/accounts#register'
+  # Route to a list of the users' plots
+  get 'account/list' => 'users/accounts#list'
 
   # Correspondent routes with nested Letter routes
   resources :correspondents do
@@ -33,7 +33,6 @@ Rails.application.routes.draw do
     member do
       # Activate and Deactivate plots
       patch :activate
-      patch :deactivate
     end
   end
 

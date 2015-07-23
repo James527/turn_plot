@@ -1,7 +1,8 @@
 class PlotsController < ApplicationController
-  before_action :set_user # only: [:show, :edit, :update, :destroy]
-  before_action :set_plot, only: [:show, :edit, :update, :destroy, :activate, :deactivate]
+  before_action :set_user, except: [:index, :show]
+  before_action :set_plot, only: [:show, :edit, :update, :destroy, :activate]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :deactivate, only: [:activate]
 
   # GET /plots
   # GET /plots.json
@@ -47,12 +48,6 @@ class PlotsController < ApplicationController
     redirect_to plot_path(@plot.id), notice: "Your plot has been activated"
   end
 
-  # PATCH/PUT /deactivate
-  def deactivate
-    @plot.update_attribute(:active_plot, false)
-    redirect_to plots_path, notice: "Your plot has been deactivated"
-  end
-
   # PATCH/PUT /plots/1
   # PATCH/PUT /plots/1.json
   def update
@@ -92,5 +87,15 @@ class PlotsController < ApplicationController
     def plot_params
       params.require(:plot).permit(:title, :content)
     end
+
+  # PATCH/PUT /deactivate
+  def deactivate
+    user_plots = @user.plots.all
+    user_plots.each do |plot|
+      if (plot.active_plot == true)
+        plot.update_attribute(:active_plot, false)
+      end
+    end
+  end
 
 end
