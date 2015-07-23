@@ -20,7 +20,7 @@ $(document).ready(function() {
 			// console.log(newX)
 			// console.log(newY)
 
-			window.location.href="http://localhost:3000/coordinates/" + newX + "/" + newY
+			window.location.href="http://turnplot.herokuapp.com/coordinates/" + newX + "/" + newY
 		}
 		else if(e.which == 38) { // up
 			e.preventDefault(); // prevent the default action
@@ -32,7 +32,7 @@ $(document).ready(function() {
 			console.log(newX)
 			console.log(newY)
 
-			window.location.href="http://localhost:3000/coordinates/" + newX + "/" + newY
+			window.location.href="http://turnplot.herokuapp.com/coordinates/" + newX + "/" + newY
 		}
 		else if(e.which == 39) { // right
 			e.preventDefault(); // prevent the default action
@@ -44,7 +44,7 @@ $(document).ready(function() {
 			console.log(newX)
 			console.log(newY)
 
-			window.location.href="http://localhost:3000/coordinates/" + newX + "/" + newY
+			window.location.href="http://turnplot.herokuapp.com/coordinates/" + newX + "/" + newY
 		}
 		else if(e.which == 40) { // down
 			e.preventDefault(); // prevent the default action
@@ -56,7 +56,7 @@ $(document).ready(function() {
 			// console.log(newX)
 			// console.log(newY)
 
-			window.location.href="http://localhost:3000/coordinates/" + newX + "/" + newY
+			window.location.href="http://turnplot.herokuapp.com/coordinates/" + newX + "/" + newY
 		}
 	});
 });
