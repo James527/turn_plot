@@ -13,6 +13,11 @@ class PlotsController < ApplicationController
   # GET /plots/1
   # GET /plots/1.json
   def show
+    x = @plot.user.x
+    y = @plot.user.y
+    puts x
+    puts y
+    
   end
 
   # GET /plots/new

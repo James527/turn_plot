@@ -9,6 +9,8 @@
   <p>Coords: <%= @plot.user.x %>, <%= @plot.user.y %></p>
   <p>Active: <%= @plot.active_plot %></p>
 </div>
+<span class='hidden' id='x'><%= @plot.user.x %></span>
+<span class='hidden' id='y'><%= @plot.user.y %></span>
 <script type="text/javascript">
   aloha(document.querySelector('#editable'));
 </script>

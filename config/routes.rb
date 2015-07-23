@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   # Route to a list of the users' plots
   get 'account/list' => 'users/accounts#list'
 
+  # Route to plot coordinates through the user
+  get 'coordinates/:x/:y' => 'users/accounts#coordinates'
+
   # Correspondent routes with nested Letter routes
   resources :correspondents do
     resources :letters do
