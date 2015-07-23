@@ -1,7 +1,8 @@
 class PlotsController < ApplicationController
-  before_action :set_user # only: [:show, :edit, :update, :destroy]
-  before_action :set_plot, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, except: [:index, :show]
+  before_action :set_plot, only: [:show, :edit, :update, :destroy, :activate]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :deactivate, only: [:activate]
 
   # GET /plots
   # GET /plots.json
@@ -12,6 +13,11 @@ class PlotsController < ApplicationController
   # GET /plots/1
   # GET /plots/1.json
   def show
+    x = @plot.user.x
+    y = @plot.user.y
+    puts x
+    puts y
+    
   end
 
   # GET /plots/new
@@ -41,13 +47,10 @@ class PlotsController < ApplicationController
     # end
   end
 
-  # POST /initial
-  def create_initial_plot
-    # @plot = @user.plots.build
-    @plot = @user.plots.create
-    # @user = User.find(1).username
-    puts @plot
-    redirect_to plots_path
+  # PATCH/PUT /activate
+  def activate
+    @plot.update_attribute(:active_plot, true)
+    redirect_to plot_path(@plot.id), notice: "Your plot has been activated"
   end
 
   # PATCH/PUT /plots/1
@@ -89,5 +92,15 @@ class PlotsController < ApplicationController
     def plot_params
       params.require(:plot).permit(:title, :content)
     end
+
+  # PATCH/PUT /deactivate
+  def deactivate
+    user_plots = @user.plots.all
+    user_plots.each do |plot|
+      if (plot.active_plot == true)
+        plot.update_attribute(:active_plot, false)
+      end
+    end
+  end
 
 end

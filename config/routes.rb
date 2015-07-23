@@ -16,8 +16,11 @@ Rails.application.routes.draw do
   get 'accounts' => 'users/accounts#index'
   get 'account' => 'users/accounts#account'
 
-  # Registration route: creates new User + new Plot
-  post 'register' => 'users/accounts#register'
+  # Route to a list of the users' plots
+  get 'account/list' => 'users/accounts#list'
+
+  # Route to plot coordinates through the user
+  get 'coordinates/:x/:y' => 'users/accounts#coordinates'
 
   # Correspondent routes with nested Letter routes
   resources :correspondents do
@@ -29,9 +32,12 @@ Rails.application.routes.draw do
   end
 
   # Plot routes
-  resources :plots
-  # Activate this plot
-  post 'initial' => 'plots/plots#create_initial_plot'
+  resources :plots do
+    member do
+      # Activate and Deactivate plots
+      patch :activate
+    end
+  end
 
   # Coordinate and User Plot routes
   # get 'plot/:x' => 'plots#index'

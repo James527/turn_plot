@@ -9,6 +9,8 @@
 		<p>Last IP: <%= @user.last_sign_in_ip %></p>
 		<p>Coords: <%= @user.x %>, <%= @user.y %></p>
 		<br>
+		<p><%= link_to 'My Plots', account_list_path %></p>
+		<br>
 		<%= link_to 'Edit', edit_user_registration_path %> | 
 		<%= link_to 'Back to Accounts', accounts_path %>
 		<br>

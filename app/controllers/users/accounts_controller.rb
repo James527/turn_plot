@@ -1,21 +1,10 @@
 class Users::AccountsController < ApplicationController
   before_action :set_user, only: :user
+  before_action :set_target_user, only: :coordinates
 
   # GET /register
   def new
     redirect_to new_user_registration_path
-  end
-
-  # POST /register
-  def register
-
-    # register User
-
-    
-    # create new Plot
-
-    # redirect to user accounts
-    redirect_to accounts_path
   end
 
   # GET /login
@@ -43,10 +32,32 @@ class Users::AccountsController < ApplicationController
     @user = current_user
   end
 
+  # GET /account/list
+  def list
+    @user = current_user
+    @user_plots = @user.plots.all
+  end
+
+  # GET /coordinates
+  def coordinates
+    # @target_user = User.where(x: 1, y: 1)
+    puts @target_user[0]
+    user_plots = @target_user[0].plots.all
+    user_plots.each do |plot|
+      if (plot.active_plot == true)
+        redirect_to plot_path(plot.id)
+      end
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.find(params[:id])
+    end
+
+    def set_target_user
+      @target_user = User.where(x: params[:x], y: params[:y])
     end
 
   #   # Never trust parameters from the scary internet, only allow the white list through.

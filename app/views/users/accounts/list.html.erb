@@ -1,8 +1,8 @@
 <div class="modal-wrapper">
   <div class="modal">
-    <h2>All Plots</h2>
+    <h2><%= @user.username %> Plots</h2>
     <ul>
-      <% @plots.each do |plot| %>
+      <% @user_plots.each do |plot| %>
         <li>
           <%= link_to plot.title, plot %>
           <span class="plot-links">
