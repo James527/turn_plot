@@ -68,12 +68,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # Generates and saves new grid coordinates for the created user
   def new_coordinates
+    # Last user X & Y coordinates
     lastX = @last_user.x
     lastY = @last_user.y
 
-    puts lastX
-    puts lastY
-
+    # New coordinates generator
     if (lastX - 1 > lastY)
       newX = lastX
       newY = lastY + 1
@@ -91,14 +90,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
       newY = 1
       @new_coordinates = [newX, newY]
     end
-
     plotX = @new_coordinates[0]
     plotY = @new_coordinates[1]
 
+    # Get the newly created user, add and save new coordinates
     new_user = current_user
     new_user.x = plotX
     new_user.y = plotY
     new_user.save
+
+    # Create initial plot for the new user
+    new_plot = new_user.plots.new
+    new_plot.active_plot = true
+    new_plot.save
   end
 
 end
