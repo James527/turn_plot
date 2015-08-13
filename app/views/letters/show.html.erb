@@ -2,9 +2,8 @@
 	<div class="modal">
 		<h2>Sent to: <%= @letter.send_to %> | Subject: <%= @letter.subject %></h2><br>
 		<div class="letter-content"><%=raw @letter.content %></div><br>
-		<%= link_to 'Mark as Read', has_read_correspondent_letter_path(@letter.correspondent.id, @letter.id), method: :patch %>
-		<br>
-		<br>
-		<%= link_to 'Edit # eventually make a trash path', edit_correspondent_letter_path(@letter.correspondent.id, @letter.id) %>
+		<%= link_to 'Mark as Read', has_read_correspondent_letter_path(@letter.correspondent.id, @letter.id), method: :patch %> | 
+		<%= link_to 'Edit', edit_correspondent_letter_path(@letter.correspondent.id, @letter.id) %> | 
+		<a href=".">Trash</a><span> (not yet working)</span> |
 	</div>
 </div>

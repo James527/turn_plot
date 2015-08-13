@@ -1,10 +1,10 @@
 <%= form_for([@correspondent, @correspondent.letters.build]) do |f| %>
 
-  <div class="field">
+  <div class="field" id="sendTo">
     <%= f.label :send_to %><br>
     <%= f.text_field :send_to %>
   </div>
-  <div class="field">
+  <div class="field" id="letterSubject">
     <%= f.label :subject %><br>
     <%= f.text_field :subject %>
   </div>

@@ -31,6 +31,9 @@ Rails.application.routes.draw do
   # Route to plot coordinates through the user
   get 'coordinates/:x/:y' => 'users/accounts#coordinates'
 
+  # AJAX plot coordinates through the user
+  # match "/coordinates/:x/:y" => "users/accounts#coordinates"
+
   # Plot routes
   resources :plots do
     member do

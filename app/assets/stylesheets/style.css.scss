@@ -115,13 +115,52 @@ th, td {
   padding-right: 1em;
 }
 
-#newPlot, #editPlot {
-  margin: 0;
+#plot_title, #letter_subject {
+  line-height: 1.3em;
+  font-size: 1.3em;
+  margin-bottom: 1em;
 }
 
-#newPlotWrapper, #editPlotWrapper {
-  padding: 0;
+#sendTo, #letterSubject {
+  display: inline-block;
 }
+
+#sendTo {
+  width: 25%;
+}
+
+#letterSubject {
+  width: 70%;
+}
+
+#letter_subject {
+  width: 80%;
+}
+
+#newPlot, #editPlot, #newLetter, #editLetter {
+  margin: 0;
+  height: 35.5em;
+}
+
+#newPlotWrapper, #editPlotWrapper, #newLetterWrapper, #editLetterWrapper {
+  padding: 0;
+  height: 37.5em;
+}
+
+#letter_send_to {
+  line-height: 1.3em;
+  font-size: 1.3em;
+  margin-bottom: 1em;
+  /*width: 20%;*/
+}
+
+#plot_title {
+  width: 50%;
+}
+
+/*#cke_1_contents {
+  height: 300px;
+}*/
 
 .hidden {
   display: none;
