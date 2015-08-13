@@ -104,5 +104,5 @@ class Users::RegistrationsController < Devise::RegistrationsController
     new_plot.active_plot = true
     new_plot.save
   end
-
+  
 end

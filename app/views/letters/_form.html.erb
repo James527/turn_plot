@@ -1,18 +1,24 @@
 <%= form_for([@correspondent, @correspondent.letters.build]) do |f| %>
 
-  <div class="field">
+  <div class="field" id="sendTo">
     <%= f.label :send_to %><br>
     <%= f.text_field :send_to %>
   </div>
-  <div class="field">
+  <div class="field" id="letterSubject">
     <%= f.label :subject %><br>
     <%= f.text_field :subject %>
   </div>
   <div class="area">
     <%= f.label :content %><br>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :class => 'ckeditor' %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $('.ckeditor').ckeditor({
+    // optional config
+  });
+</script>

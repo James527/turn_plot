@@ -17,9 +17,15 @@
   </div>
   <div class="area">
     <%= f.label :content %><br>
-    <%= f.text_area :content %>
+    <%= f.text_area :content, :class => 'ckeditor' %>
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $('.ckeditor').ckeditor({
+    // optional config
+  });
+</script>

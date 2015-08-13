@@ -1,0 +1,199 @@
+/*____ADDED FONTS________________________________________________*/
+
+@font-face {
+  font-family: 'Archistico';
+  src:font-url('Archistico_Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+/*____MAIN STYLES________________________________________________*/
+
+body{
+	margin: 0;
+  background-color: #f5f5f5;
+}
+
+header {
+	background-color: #f5f5f5;
+	border-bottom: 1px solid #e5e5e5;
+	height: 3em;
+	padding: 0 8px;
+}
+
+footer{
+	background-color: #f5f5f5;
+	border-top: 1px solid #e5e5e5;
+	min-height: 8em;
+	padding: 0 8px;
+}
+
+a {
+	text-decoration: none;
+}
+
+header a {
+	margin: 0 0.5em;
+	color: #666;
+}
+
+h1 {
+/*	font-family: 'Archistico';*/
+}
+
+h2 {
+  font-size: 1.5em;
+  margin:0 0 0.5em;
+}
+
+table, td {
+  border: 1px solid #e5e5e5;
+}
+
+th, td {
+  padding: 0 1em;
+}
+
+
+/*____CLASS & ID STYLES________________________________________________*/
+
+.site-title {
+	display: inline-block;
+	font-family: 'Archistico';
+	font-size: 2.6em;
+  margin-left: 0.5em;
+}
+
+.header-nav {
+	display: inline-block;
+	float: right;
+	margin: 1em;
+}
+
+.flash-block {
+  background-color: #fff;
+}
+
+.notice, .alert {
+	text-align: center;
+	color: #ff0000;
+}
+
+.main-wrapper {
+  background-color: #fff;
+	margin: 0;
+	min-height: 600px;
+  width: 100%;
+}
+
+.modal-wrapper {
+  padding: 5em 0;
+}
+
+.modal {
+  background-color: #f5f5f5;
+  border: 1px solid #e5e5e5;
+  margin: 0 25%;
+  padding: 1em 1.5em;
+}
+
+.plot-links {
+  float: right;
+}
+
+.plot-wrapper {
+  border: 1px solid #e5e5e5;
+  width: 100%;
+  height: 600px;
+}
+
+.plot-info {
+  display: inline-block;
+  float: right;
+  margin-top: -4.2em;
+  padding-right: 1em;
+}
+
+#plot_title, #letter_subject {
+  line-height: 1.3em;
+  font-size: 1.3em;
+  margin-bottom: 1em;
+}
+
+#sendTo, #letterSubject {
+  display: inline-block;
+}
+
+#sendTo {
+  width: 25%;
+}
+
+#letterSubject {
+  width: 70%;
+}
+
+#letter_subject {
+  width: 80%;
+}
+
+#newPlot, #editPlot, #newLetter, #editLetter {
+  margin: 0;
+  height: 35.5em;
+}
+
+#newPlotWrapper, #editPlotWrapper, #newLetterWrapper, #editLetterWrapper {
+  padding: 0;
+  height: 37.5em;
+}
+
+#letter_send_to {
+  line-height: 1.3em;
+  font-size: 1.3em;
+  margin-bottom: 1em;
+  /*width: 20%;*/
+}
+
+#plot_title {
+  width: 50%;
+}
+
+/*#cke_1_contents {
+  height: 300px;
+}*/
+
+.hidden {
+  display: none;
+}
+
+#editable {
+  min-height: 5em;
+}
+
+#letter_content, #plot_content {
+  min-height: 10em;
+  width: 100%;
+}
+
+
+/*____MEDIA QUERY________________________________________________*/
+
+@media (max-width: 700px) {
+
+  .site-title {
+    display: block;
+    text-align: center;
+    margin: 0;
+  }
+
+  .header-nav {
+    display: block;
+    margin: 0.5em 0 0;
+    float: none;
+    text-align: center;
+  }
+
+  .main-wrapper {
+    min-height: 400px;
+  }
+}

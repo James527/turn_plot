@@ -16,6 +16,8 @@ gem 'coffee-rails', '~> 4.1.0'
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
 
+# CKEditor is a javascript library of the WYSIWYG rich-text editor. This gem integrates CKEditor with Rails asset pipeline for easy of use
+gem 'ckeditor_rails', '~> 4.5.1'
 # Whitelist-based Ruby HTML and CSS sanitizer
 # gem 'sanitize', '~> 4.0.0'
 
