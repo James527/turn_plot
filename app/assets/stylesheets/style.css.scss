@@ -115,6 +115,14 @@ th, td {
   padding-right: 1em;
 }
 
+#newPlot, #editPlot {
+  margin: 0;
+}
+
+#newPlotWrapper, #editPlotWrapper {
+  padding: 0;
+}
+
 .hidden {
   display: none;
 }

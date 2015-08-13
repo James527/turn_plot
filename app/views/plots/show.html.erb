@@ -1,6 +1,6 @@
 <div class="plot-wrapper">
-  <div class="plot" id="editable">
-    <%= @plot.content %>
+  <div class="plot">
+    <%=raw @plot.content %>
   </div>
 </div>
 <div class="plot-info">
@@ -11,6 +11,3 @@
 </div>
 <span class='hidden' id='x'><%= @plot.user.x %></span>
 <span class='hidden' id='y'><%= @plot.user.y %></span>
-<script type="text/javascript">
-  aloha(document.querySelector('#editable'));
-</script>
